@@ -1,0 +1,45 @@
+@import '~normalize.css/normalize.css';
+
+@import './base/mixins.scss';
+@import './base/colors.scss';
+
+//primeng
+@import '~primeicons/primeicons.css';
+@import '~primeng/resources/themes/saga-blue/theme.css';
+@import '~primeng/resources/primeng.min.css';
+@import '~primeflex/primeflex.css';
+@import '~animate.css/animate.css';
+@import './base/fonts.scss';
+
+@import './base/configuration.scss';
+
+//bootstrap
+@import url('https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css');
+
+//Pages
+@import './apps/shop/pages/home-page.scss';
+@import './apps/shop/pages/products-list-page.scss';
+
+//Shared
+@import './apps/shop/shared/header.scss';
+@import './apps/shop/shared/footer.scss';
+@import './apps/shop/shared/nav.scss';
+
+//Libs
+@import './libs/ui/ui.scss';
+@import './libs/products/product-item.scss';
+@import './libs/products/product-search.scss';
+@import './libs/products/product-page.scss';
+@import './libs/products/categories-banner.scss';
+@import './libs/orders/orders.scss';
+.container {
+  width: 1200px;
+  padding: 15px;
+  margin: 0 auto;
+  background-color: var(--surface-100);
+}
+
+button {
+  background-color: $primary-color;
+  border: 0;
+}

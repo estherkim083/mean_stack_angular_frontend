@@ -1,0 +1,12 @@
+<div class="gallery" *ngIf="hasImages">
+  <div class="main-image">
+    <img [src]="selectedImage" alt="" />
+  </div>
+  <div class="images">
+    <ul>
+      <li *ngFor="let image of images">
+        <img [src]="image" alt="" (click)="changeSelectedImage(image)" />
+      </li>
+    </ul>
+  </div>
+</div>

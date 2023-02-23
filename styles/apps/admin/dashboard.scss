@@ -1,0 +1,53 @@
+.d-item {
+  display: flex;
+  text-align: center;
+  color: var(--surface-0);
+  justify-content: space-between;
+
+  .pi {
+    font-size: 4em;
+    margin-bottom: 15px;
+  }
+  .name {
+    font-size: 1.4em;
+  }
+  .number {
+    font-size: 2.5em;
+    margin-top: 16px;
+  }
+}
+.d-orders {
+  background: rgb(131, 58, 180);
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+}
+
+.d-products {
+  background: rgb(58, 73, 180);
+  background: linear-gradient(
+    90deg,
+    rgba(58, 73, 180, 1) 0%,
+    rgba(252, 176, 69, 1) 100%
+  );
+}
+.d-users {
+  background: rgb(58, 73, 180);
+  background: linear-gradient(
+    90deg,
+    rgba(58, 73, 180, 1) 0%,
+    rgba(238, 69, 252, 1) 100%
+  );
+}
+
+.d-totalsales {
+  background: rgb(215, 65, 184);
+  background: linear-gradient(
+    90deg,
+    rgba(215, 65, 184, 1) 26%,
+    rgba(69, 252, 118, 1) 100%
+  );
+}

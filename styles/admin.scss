@@ -1,0 +1,23 @@
+@import '~normalize.css/normalize.css';
+
+@import './base/mixins.scss';
+@import './base/colors.scss';
+@import './base/fonts.scss';
+
+//primeng
+@import '~primeicons/primeicons.css';
+@import '~primeng/resources/themes/saga-blue/theme.css';
+@import '~primeng/resources/primeng.min.css';
+@import '~primeflex/primeflex.css';
+@import './base/configuration.scss';
+
+//bootstrap
+@import url('https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css');
+
+//Libs
+@import './libs/ui/ui.scss';
+@import './apps/admin/shell.scss';
+
+@import './apps/admin/dashboard.scss';
+
+@import './libs/users/users.scss';

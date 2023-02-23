@@ -1,0 +1,87 @@
+<p-toast></p-toast>
+<div class="admin-page">
+  <p-card header="Users" subheader="List of all users">
+    <div class="p-grid">
+      <div class="p-col-12">
+        <p-toolbar>
+          <div class="p-toolbar-group-left">
+            <p-button
+              styleClass="p-button-success"
+              label="New"
+              icon="pi pi-plus"
+              routerLink="form"
+            ></p-button>
+          </div>
+        </p-toolbar>
+      </div>
+    </div>
+    <div class="p-grid">
+      <div class="p-col-12">
+        <p-table
+          [paginator]="true"
+          [rows]="5"
+          [value]="users"
+          [tableStyle]="{ 'min-width': '50rem' }"
+          styleClass="p-datatable-gridlines"
+        >
+          <ng-template pTemplate="header">
+            <tr>
+              <th pSortableColumn="name">
+                Name<p-sortIcon field="name"></p-sortIcon>
+              </th>
+              <th>Email</th>
+              <th>Is Admin</th>
+              <th>Country</th>
+              <th></th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-user>
+            <tr>
+              <td>{{ user.name }}</td>
+              <td>{{ user.email }}</td>
+              <td>
+                <p-tag
+                  *ngIf="user.isAdmin"
+                  styleClass="mr-2"
+                  icon="pi pi-check"
+                  severity="success"
+                  value="is Admin"
+                  [rounded]="true"
+                ></p-tag>
+                <p-tag
+                  *ngIf="!user.isAdmin"
+                  styleClass="mr-2"
+                  icon="pi pi-times"
+                  severity="danger"
+                  value="not Admin"
+                  [rounded]="true"
+                ></p-tag>
+              </td>
+              <td>{{ getCountryName(user.country) }}</td>
+              <td>
+                <p-button
+                  styleClass="p-button-danger mr-2"
+                  label="Delete"
+                  icon="pi pi-trash"
+                  (click)="deleteUser(user._id)"
+                ></p-button>
+                <p-button
+                  styleClass="p-button-success"
+                  label="Edit"
+                  icon="pi pi-pencil"
+                  (click)="updateUser(user._id)"
+                ></p-button>
+              </td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+    </div>
+  </p-card>
+</div>
+
+<p-confirmDialog
+  [style]="{ width: '50vw' }"
+  [baseZIndex]="10000"
+  rejectButtonStyleClass="p-button-text"
+></p-confirmDialog>

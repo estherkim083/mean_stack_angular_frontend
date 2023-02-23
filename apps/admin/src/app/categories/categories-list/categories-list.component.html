@@ -1,0 +1,79 @@
+<p-toast></p-toast>
+<div class="admin-page">
+  <p-card header="Categories" subheader="List of all categories">
+    <div class="p-grid">
+      <div class="p-col-12">
+        <p-toolbar>
+          <div class="p-toolbar-group-left">
+            <p-button
+              styleClass="p-button-success"
+              label="New"
+              icon="pi pi-plus"
+              routerLink="form"
+            ></p-button>
+          </div>
+        </p-toolbar>
+      </div>
+    </div>
+    <div class="p-grid">
+      <div class="p-col-12">
+        <p-table
+          [value]="categories"
+          [tableStyle]="{ 'min-width': '50rem' }"
+          styleClass="p-datatable-gridlines"
+        >
+          <ng-template pTemplate="header">
+            <tr>
+              <th pSortableColumn="name">
+                Name<p-sortIcon field="name"></p-sortIcon>
+              </th>
+              <th>Icon</th>
+              <th>Color</th>
+              <th></th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-category>
+            <tr>
+              <td>{{ category.name }}</td>
+              <td>
+                <i
+                  class="pi"
+                  [ngClass]="'pi-' + category.icon"
+                  style="font-size: 2rem"
+                ></i>
+              </td>
+              <td>
+                <div
+                  style="width: 30px; height: 30px; border-radius: 50%"
+                  [style.background]="
+                    category.color ? category.color : '#FFFFFF'
+                  "
+                ></div>
+              </td>
+              <td>
+                <p-button
+                  styleClass="p-button-danger mr-2"
+                  label="Delete"
+                  icon="pi pi-trash"
+                  (click)="deleteCategry(category._id)"
+                ></p-button>
+                <p-button
+                  styleClass="p-button-success"
+                  label="Edit"
+                  icon="pi pi-pencil"
+                  (click)="updateCategory(category._id)"
+                ></p-button>
+              </td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+    </div>
+  </p-card>
+</div>
+
+<p-confirmDialog
+  [style]="{ width: '50vw' }"
+  [baseZIndex]="10000"
+  rejectButtonStyleClass="p-button-text"
+></p-confirmDialog>
